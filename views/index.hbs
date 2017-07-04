@@ -1,0 +1,52 @@
+{{#section 'title'}}
+	<title>Slow_soul的博客</title>
+{{/section}}
+{{#section 'head'}}
+	<link rel="stylesheet" href="/css/inc_style.css">
+	<link rel="stylesheet" href="/css/index.css">
+{{/section}}
+<!-- 文章内容列表 -->
+<div id="main">
+	<section id="page-index">
+	{{#each context.articles}}
+		<article class="article">
+			<div class="meta">
+				<div>
+					<span class="date">{{date}}</span>
+				</div>
+				<div class="comment">
+					<a href="/article/{{id}}#comments">{{comments}}个评论</a>
+				</div>
+			</div>
+			<h2 class="title"><a href="/article/{{id}}">{{title}}</a></h2>
+			<div class="article-tag">
+				<h4><small>分类 : </small> <a class="laebl-a" href="/classification/{{tag}}"><span class="label label-success">{{tag}}</span></a> </h4>
+				<h4><small>标签 : </small>
+				{{#each labels}}
+					<a href="/classification/{{../tag}}/{{this}}" class="laebl-a"><span class="label label-primary">{{this}}</span></a>
+				{{/each}}
+				</h4>
+			</div>
+			<div class="article-content">
+				{{{content}}}
+			</div>
+			<div id="read-more">
+				<a href="/article/{{id}}">阅读全文 >></a>
+			</div>
+		</article>
+	{{/each}}
+	</section>
+	<nav aria-label="...">
+	  <ul class="pager">
+	  {{#if page.prev}}
+	    <li class="previous"><a href="/page/{{page.prev}}"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+	  {{/if}}
+	  {{#if page.next}}
+	    <li class="next"><a href="/page/{{page.next}}">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+	   {{/if}}
+	  </ul>
+	</nav>
+</div>
+{{#section 'js'}}
+	<script src="/js/iconfont.js"></script>
+{{/section}}

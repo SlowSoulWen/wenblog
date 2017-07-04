@@ -1,0 +1,44 @@
+#title {
+    padding: 10px 0;
+    color: #666;
+    font-weight: bold;
+}
+.fgx {
+    width: 100%;
+    border-bottom: 3px solid #666;
+}
+
+.article-list {
+    padding: 10px 0;
+}
+
+.article-list li {
+    font-size: 1.3em;
+    padding: 5px 0;
+}
+
+.article-list li a {
+    color: #666;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.article-list li a:hover {
+    color:#337ab7;
+    transition: all 1s;
+}
+
+.article-list .point {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #666;
+    margin: 0 5px;
+    vertical-align:middle;
+}
+
+@media only screen and ( max-width:768px){
+    body {
+        background-color: #ffffff;
+    }
+}

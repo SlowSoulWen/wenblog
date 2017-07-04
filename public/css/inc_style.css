@@ -1,0 +1,277 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	font-family: "Biaodian Pro Sans GB","Helvetica Neue",Helvetica,Arial,"Han Heiti GB",sans-serif;
+}
+ul,li{
+	list-style: none;
+}
+p{
+	font-size: 17px;
+	color: #666;
+}
+blockquote{
+	padding-top: 15px;
+	padding-bottom: 15px; 
+	background-color: #EEEEEE;
+	border-left:5px solid #CCCCFF;
+}
+a.laebl-a {
+	text-decoration: none;
+}
+.icon{
+	width: 1.5em;
+	height: 1.5em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
+::selection {
+	background:#666;
+	color:#fff;
+}
+/*侧边栏样式*/
+#sidebar{
+	color:#888888;
+	z-index: 20;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color:#f5f5f5; 
+	height: 100%;
+	width:25%;
+	overflow: hidden;
+}
+#sidebar .blog-name{
+	font-size: 1.6em;
+	color: #666;
+	font-weight: bold;
+}
+#sidebar ul li{
+	display: inline-block;
+	padding: 10px 15px;
+	text-align: center;
+}
+#sidebar ul li span{
+	font-size: 1.3em;
+	display: inline-block;
+	padding: 0 30px;
+	color: #666;
+}
+.profile{
+	padding: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin: 0 auto;	
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.profile img{
+	display: block;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 6px solid #ffffff;
+	margin: 0 auto;
+}
+.profile span{
+	display: block;
+	text-align: center;
+	padding: 20px 0;
+}
+#sidebarBackgroundPic{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
+}
+/*顶部栏样式*/
+#topbar{
+	background-color:#525252;
+}
+#topbar .navbar-brand img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-top: -10px;
+}
+#topbar h3{
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	z-index: 1;
+}
+#topbar h3 a{
+	color:#ffffff;
+}
+#topbar .dropdown-menu{
+	z-index: 5;
+}
+#topbar .navbar-toggle{
+	border: none;
+	outline-style: none;
+}
+#topbar .navbar-toggle:hover{
+	background-color:#909090 !important;
+	border-style:none; 
+}
+#topbar .navbar-toggle:focus{
+	background-color:#909090 !important;
+	border-style:none; 
+}
+#topbar .navbar-toggle .icon-bar{
+	background-color:#ffffff;
+}
+
+#topbar .navbar-nav>li>a {
+	color : #ffffff;
+}
+/*文章列表样式*/
+#main{
+	max-width: 1390px;
+	padding-left:30%;
+	padding-right:40px; 
+	overflow: hidden; 
+}
+.article{
+	padding: 20px 0;
+	position: relative;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 20px;
+}
+.article-tag{
+	padding-bottom: 20px;
+}
+.title{
+	width: 85%;
+}
+.title a{
+	color: #666;
+	font-weight:bold;
+	text-decoration: none;
+}
+.title a:hover{
+	color: #2479CC;
+	transition : color 1s;
+}
+a:hover {
+	transition : color 1s;
+}
+.meta{
+	text-align: right;
+	position: absolute;
+	right: 15px;
+	top: 40px;
+}
+.meta .date {
+	font-size: 1.2em;
+	color: #b3b3b1;
+}
+.meta .comment {
+	margin-top: 5px;
+}
+.label{
+	line-height: 2;
+	font-size: 0.8em;
+	border-radius: 0;
+	cursor: pointer;
+        text-decoration: none;
+}
+.label:hover {
+	border-bottom: 3px solid #666;
+}
+a.label-primary {
+	display: inline-block;
+	background-color:#b3b3b1;
+	padding: 2px 3px;
+	margin-bottom: 10px;
+}
+.article-content{
+	overflow: hidden;
+}
+.article-content p {
+	font-size: 1.2em;
+	letter-spacing: 1px;
+}
+.article-content img{
+	width: 100%;
+}
+span.label {
+	background-color: #ffffff;
+	color: #666;
+
+}
+h4 small {
+	font-size: 0.8em;
+}
+#read-more {
+	margin-top: 20px;
+}
+/*媒体查询:平板类型;*/
+@media only screen and ( min-width:367px ) and ( max-width:992px){
+	#sidebar{
+		width:75px;	
+	}	
+	.profile img{
+		width: 55px;
+		height: 55px;
+	}
+	.profile span{
+		display: none;
+	}
+	.sidemenu{
+		padding: 0;
+	}
+	#sidebar .sidemenu li span{
+		display: none;
+	}
+	.sidemenu li{
+		width: 100%;
+		text-align: center;
+	}
+	#main{
+		padding-left:100px; 
+	}
+	#sidebarBackgroundPic {
+		display: none;
+	}
+	.article-content p {
+		font-size: 1.4em;
+		letter-spacing: 0;
+	}
+}
+/*媒体查询:手机类型*/
+@media only screen and ( max-width:768px){
+	body{
+		background-color: #DDDDDD;
+		padding-top: 70px !important;
+	}
+	#main{
+		padding-left:1.5em; 
+		padding-right:1.5em;
+	}
+	.title{
+		width: 70%;
+		font-size:2em;
+	}
+	.article{
+		position: relative;
+		border: 1px solid #DDDDDD;
+		background-color: #ffffff;
+		padding: 20px 2em !important;
+	}
+	.meta{
+		right: 3em !important;
+		top:1.5em !important;
+	}	
+	.meta a,.meta span{
+		font-size: 1em;
+	}	
+	#sidebarBackgroundPic {
+		display: none;
+	}
+	.article-content p {
+		font-size: 1.4em;
+		letter-spacing: 0;
+	}
+}

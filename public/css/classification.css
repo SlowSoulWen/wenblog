@@ -1,0 +1,74 @@
+body{
+	padding-top: 30px;
+}
+.article{
+	padding-bottom:20px;
+	position: relative;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 30px;
+	padding-top: 0;
+}
+.title{
+	margin-top: 0;
+}
+.meta{
+	top:0;
+}
+.label{
+	margin-left: 5px;
+	line-height: 2;
+}
+.label-list{
+	word-wrap : break-word;
+}
+
+.label-list a.label{
+	font-size:1em;
+}
+.classification-menu{
+	margin-bottom: 30px;
+}
+.label-primary[href]:focus, .label-primary[href]:hover {
+    background-color: #666;
+}
+a.label-primary {
+    display: inline-block;
+    background-color: #b3b3b1;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+	text-decoration: none !important;
+}
+a.label-primary:hover {
+	transition : all 1s;
+	border-bottom: 0;
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
+	background-color: #666;
+}
+.article-content p,
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6,
+.article-content blockquote,
+.article-content span {
+        font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif !important;
+        color: rgb(64, 64, 64) !important;
+        margin-top: 10px !important;
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+        margin-bottom: 10px !important;
+}
+
+/*媒体查询:手机类*  * 型*/
+@media only screen and ( max-width:768px){	
+	.article-list,
+	.classification-menu {
+		padding: 0;
+	}
+	.title {
+		font-size:1.5em;
+	}
+}

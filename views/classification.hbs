@@ -1,0 +1,66 @@
+{{#section 'title'}}
+	<title>Slow_soul的博客-分类</title>
+{{/section}}
+{{#section 'head'}}
+	<link rel="stylesheet" href="/css/inc_style.css">
+	<link rel="stylesheet" href="/css/classification.css">
+{{/section}}
+<!-- 主内容 -->
+<div id="main">
+	<div class="classification-menu col-md-3">
+		<div class="list-group hidden-xs">
+		  <a href="#" class="list-group-item active">
+		    分类列表
+		  </a>
+		  {{#each menuData}}
+		  {{#if this.active}}
+		  	<a href="/classification/{{this.tag}}" class="list-group-item disabled" disabled>{{this.tag}}<span class="badge">{{this.num}}</span></a>
+		  {{else}}
+		  	<a href="/classification/{{this.tag}}" class="list-group-item">{{this.tag}}<span class="badge">{{this.num}}</span></a>
+		  {{/if}}
+		  {{/each}}
+		</div>
+		<div class="label-list">
+			<h4><strong>标签筛选:</strong></h4>
+			{{#each menuData}}
+			  {{#if this.active}}
+				{{#each this.labels}}
+					<a href="/classification/{{../this.tag}}/{{this}}" class="label label-primary">{{this}}</a>
+				{{/each}}
+			  {{/if}}			
+			{{/each}}
+		</div>
+	</div>
+	<div class="article-list col-md-9">
+		<section id="page-index">
+		{{#each articles}}
+			<article class="article">
+				<div class="meta">
+					<div>
+						<span class="date">{{date}}</span>
+					</div>
+					<div class="comment">
+						<a href="/article/{{id}}#comments">{{comments}}个评论</a>
+					</div>
+				</div>
+				<h1 class="title"><a href="/article/{{id}}">{{title}}</a></h1>
+				<div class="article-tag">
+					<h4><small>分类 : </small><a class="laebl-a" href="/classification/{{tag}}"><span class="label label-success">{{tag}}</span></a> </h4>
+					<h4><small>标签 : </small>
+						{{#each labels}}
+							<a href="/classification/{{../tag}}/{{this}}" class="laebl-a"><span class="label label-primary">{{this}}</span></a>
+						{{/each}}
+					</h4>
+				</div>
+				<div class="article-content">
+						{{{content}}}
+				</div>
+				<a href="/article/{{id}}">阅读全文 >></a>
+			</article>
+		{{/each}}
+		</section>		
+	</div>
+</div>
+{{#section 'js'}}
+<script src="/js/iconfont.js"></script>
+{{/section}}

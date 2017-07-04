@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="renderer" content="webkit">
+	<link rel="shortcut icon" href="/img/user.jpg" />
+        <link rel="stylesheet" href="/css/chajian/bootstrap.min.css">
+	{{{_sections.title}}}
+	{{{_sections.head}}}
+</head>
+<body>
+<!-- pc端和平板端左侧栏 -->
+<nav id="sidebar" class="visible-md-block visible-lg-block visible-sm-block">
+	<div class="profile container-fluid">
+		<img src="/img/user.jpg" alt="">
+		<span class="blog-name">Slow_soul的博客</span>
+	</div>
+	<ul class="sidemenu">
+		<a href="/">
+			<li>
+				<svg class="icon" aria-hidden="true">
+				    <use xlink:href="#icon-zhuye"></use>
+				</svg>
+				<span>主页</span>
+			</li>
+		</a>
+		<a href="/classification">
+			<li>
+				<svg class="icon">
+					<use xlink:href="#icon-tag-copy"></use>
+				</svg>
+				<span>分类</span>
+			</li>
+		</a>
+		<a href="/archiving">
+			<li>
+				<svg class="icon">
+					<use xlink:href="#icon-guidang"></use>
+				</svg>
+				<span>归档</span>
+			</li>
+		</a>
+		<a href="/about">
+			<li>
+				<svg class="icon">
+					<use xlink:href="#icon-my"></use>
+				</svg>
+				<span>关于</span>
+			</li>
+		</a>
+	</ul>
+	<img src="http://oo917ps5l.bkt.clouddn.com/backgroundPic3.jpg" id="sidebarBackgroundPic" alt="">
+</nav>
+<!-- 平板顶部菜单栏 -->
+<nav class="navbar navbar-default visible-xs-block navbar-fixed-top" id="topbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="/img/user.jpg" alt=""></a>
+      <h3><a href="">Slow_soul的博客</a></h3>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">主页<span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+        <li><a href="#">归档</a></li>
+        <li><a href="#">关于</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{{{body}}}
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/chajian/bootstrap.min.js"></script>
+{{{_sections.js}}}
+</body>
+</html>

@@ -1,0 +1,49 @@
+#main{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#title {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+#main span {
+    display: block;
+    font-family: "Biaodian Pro Sans GB","Helvetica Neue",Helvetica,Arial,"Han Heiti GB",sans-serif;
+    font-size: 1.3em;
+    text-align: justify;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+#main .title-span {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#main ul li {
+    color: #666;
+    font-size: 1.3em;
+    padding: 5px;
+}
+
+#main .icon {
+    text-decoration: none;
+    border: none;
+    color: #888;
+}
+
+#main .icon:hover {
+    color:#007998;
+    transition: all 1s;
+}
+
+#linkme {
+    margin-bottom: 30px;
+}
+
+#linkme a:hover {
+    text-decoration: none;
+}

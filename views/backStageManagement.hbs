@@ -1,0 +1,74 @@
+{{#section 'title'}}
+	<title>博客后台</title>
+{{/section}}
+{{#section 'head'}}
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/articlesEditor.css">
+{{/section}}
+{{#if flash}}
+	<div class="alert alert-dismissable alert-{{flash-type}}" style="background-color:#F5F5D5">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<h5><strong style="color:red">{{flash.intro}} :</strong></h5>
+		<h5>{{{flash.message}}}</h5>
+	</div>
+{{/if}}
+<div id="article-write" class="col-md-6">
+	<div class="form-group">
+		<label for="exampleInputEmail1">文章标题:</label>
+		<input type="text" name="title" class="form-control title-data" placeholder="标题">
+	</div>
+	<div class="form-group">
+		<label for="exampleInputPassword1">文章分类:</label>
+		<div>
+			<select class="form-control classification-data" style="width:30%;display:inline-block">
+			  <option>选择类别</option>
+			  <option name="tag">技术</option>
+			  <option name="tag">日常</option>
+			  <option name="tag">读书笔记</option>
+			</select>
+			<span> 或者 </span>
+			<input type="text" name="tag" class="form-control add-classification-data" id="exampleInputEmail1" placeholder="新增一个类别" style="width:35%;display:inline-block">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputPassword1">标签:</label>
+		<input type="text" class="form-control label-data" name="labels" placeholder="标签之间用空格隔开">
+	</div>
+	<div id="summernote">
+		<p>博客正文</p>
+	</div>
+	<button class="btn btn-primary read-atricle">预览</button>
+	<button class="btn btn-success add-article">确认提交</button>
+</div>
+<div id="main" class="article-read col-md-6">
+</div>
+<!-- js模板引擎 -->
+<script id="tpl" type="text/template"> 
+	<article class="article">
+		<div class="meta">
+			<div>
+				<span class="date">${date}</span>
+			</div>
+			<div class="comment">
+				<a href="#">${comments}个评论</a>
+			</div>
+		</div>
+		<h1 class="title"><a href="#">${title}</a></h1>
+		<div class="article-tag">
+			<h4><small>分类 : </small><span class="label label-success">${tag}</span></h4>
+			<h4><small>标签 : </small>
+				{@each labels as it}
+					<span class="label label-primary">${it}</span> 
+				{@/each}
+			</h4>
+		</div>
+		<div class="article-content">
+			$${content}
+		</div>
+	</article>	
+</script>
+{{#section 'js'}}
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+<script src="http://cdn.bootcss.com/juicer/0.6.14/juicer-min.js"></script>
+<script src="/js/articlesEditor.js"></script>
+{{/section}}

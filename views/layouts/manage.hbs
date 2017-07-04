@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="renderer" content="webkit">
+        <link rel="shortcut icon" href="/img/user.jpg"/>
+        {{{_sections.title}}}
+	<link rel="stylesheet" href="/css/chajian/bootstrap.min.css">
+	{{{_sections.head}}}
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">我的博客管理后台</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      	<li><a href="/manage/">写博客</a></li>
+        <li><a href="/manage/managearticles">文章管理<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">留言管理</a></li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">搜索文章</button>
+      </form>
+    </div>
+  </div>
+</nav>
+{{{body}}}
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/chajian/bootstrap.min.js"></script>
+{{{_sections.js}}}
+</body>
+</html>

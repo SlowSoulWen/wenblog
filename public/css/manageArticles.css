@@ -1,0 +1,80 @@
+p{
+	font-size: 17px;
+	color: #666;
+}
+blockquote{
+	padding-top: 15px;
+	padding-bottom: 15px; 
+	background-color: #EEEEEE;
+	border-left:5px solid #CCCCFF;
+}
+/*文章列表样式*/
+#main{
+	overflow: hidden; 
+	background-color:#F5F5D5;
+	padding-left:1.5em;
+	padding-right: 1.5em; 
+	min-height: 600px;
+}
+.article{
+	position: relative;
+	margin-bottom: 20px;
+}
+.article-tag{
+	padding-bottom: 20px;
+}
+.title{
+	width: 80%;
+}
+.title a{
+	color: #000000;
+	text-decoration: none;
+}
+.title a:hover{
+	color: #2479CC;
+	transition : color .3s;
+}
+.meta{
+	text-align: right;
+	position: absolute;
+	right:0px;
+	top: 0px;
+}
+.label{
+	line-height: 2;
+}
+#article-write{
+	margin-bottom: 50px;
+}
+/*图标样式*/
+.icon {
+	width: 2em;
+	height: 2em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+	color: #555555;
+}
+.operate{
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin:10px 0;
+}
+.operate ul{
+	padding: 5px 10px;
+	margin: 0;
+}
+.operate-list{
+	list-style: none;
+}
+.article-title{
+	font-size: 20px;
+	line-height:2em;
+	padding-right: 10px;
+}	
+.timeSort-articles{
+	margin-top: 30px;
+}
+#menu-list{
+	padding-bottom: 30px;
+}

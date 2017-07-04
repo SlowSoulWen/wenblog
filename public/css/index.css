@@ -1,0 +1,33 @@
+.article{
+	padding-top:0; 
+}
+.meta{
+	right: 0;
+	top:0;
+}
+.article-content p,
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6,
+.article-content blockquote,
+.article-content span {
+	font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif !important; 
+	color: rgb(64, 64, 64) !important; 
+	margin-top: 10px !important; 
+	margin-right: 0px !important; 
+	margin-left: 0px !important;
+	margin-bottom: 10px !important; 
+	font-size: 16px !important;
+	letter-spacing: 1px !important;
+        font-weight: normal !important; 
+}
+/*媒体查询:手机类型*/
+@media only screen and ( max-width:768px){
+	.title{
+		font-size:1.5em;
+		margin-top: 0;
+	}
+}

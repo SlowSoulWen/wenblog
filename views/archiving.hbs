@@ -1,0 +1,23 @@
+{{#section 'title'}}
+	<title>慢灵魂的博客-归档</title>
+{{/section}}
+{{#section 'head'}}
+	<link rel="stylesheet" href="/css/inc_style.css">
+	<link rel="stylesheet" href="/css/archiving.css">
+{{/section}}
+<div id="main">
+    <h2 id="title">博客归档</h2>
+    <div class="fgx"></div>
+    {{#each articleList}}
+    <h3 class="year">{{@key}}</h3>
+    <ul class="article-list">
+        {{#each this}}
+        <li><span class="point"></span>{{this.date}}   <a href="/article/{{this._id}}">《{{this.title}}》</a></li>
+        {{/each}}
+    </ul>
+    {{/each}}
+</div>
+{{#section 'js'}}
+	<script src="/js/iconfont.js"></script>
+	<script src="/js/archiving.js"></script>
+{{/section}}
