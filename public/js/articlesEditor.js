@@ -16,12 +16,14 @@ function addFirstData(data){
 		labelsStr += (data.labels[i] + " ");
 	 }
 	 $('.label-data').val(labelsStr);
-	 $('#summernote').summernote('code', data.content);
+	 $("#test").val(data.content);
 }
 //预览文章
 function showArticle(){
 	var tpl = document.getElementById('tpl').innerHTML;	
-	var html = juicer(tpl, data); 
+	var Data = data;
+	Data.content = marked(Data.content)
+	var html = juicer(tpl, Data); 
 	$('#main').html(html);
 }
 // 获取文章的数据
@@ -29,7 +31,9 @@ function getArticleData(){
 	var title = $('.title-data').val();
 	var classification = $('.classification-data').val();
 	var label = $('.label-data').val().trim();
-	var markupStr = $('#summernote').summernote('code');
+	// var markupStr = $('#summernote').summernote('code');
+	var markupStr = $('#test').val();
+	// console.log(marked(markupStr));
 	var addClassification =  $('.add-classification-data').val();
 	if(title =="" || classification == "" || label == "" || markupStr =="" || (classification == "选择类别" && addClassification == "")){
 		alert("填写完整相关信息！");
@@ -61,7 +65,6 @@ function addArticle(url){
 	});
 }
 $(document).ready(function() {
-    $('#summernote').summernote();
     var urlArry = (window.location.href).split('/');
     var postId = urlArry[urlArry.length-1];
     //如果postId存在则说明是修改文章，执行数据预加载

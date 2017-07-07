@@ -4,6 +4,18 @@ const articlesTool = require("../lib/articlesTool").articlesTool;
 const trimHtml = require('trim-html');
 const async = require("async");
 const recordIP = require('../middlewares/recordIP').recordIP;
+const marked = require('marked');
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false
+});
 
 module.exports = function(app){
 	app.use(require('body-parser')());
@@ -25,7 +37,7 @@ module.exports = function(app){
 					return {
 						id :  article._id,
 					    title: article.title,
-					    content:trimHtml(article.content, {limit: 100}).html,  
+					    content:trimHtml(marked(article.content),{limit: 100}).html,  
 					    date:date.toLocaleDateString(),
 					    comments:article.comments.length,
 					    labels:article.labels,
@@ -58,7 +70,7 @@ module.exports = function(app){
 					return {
 						id :  article._id,
 					    title: article.title,
-					    content:article.content,
+					    content:trimHtml(marked(article.content),{limit: 100}).html,
 					    date:date.getMonth() + "月" + date.getDay() + "日," + date.getFullYear(),
 					    comments:article.comments.length,
 					    labels:article.labels,
@@ -77,6 +89,7 @@ module.exports = function(app){
 	app.get('/article/:id',recordIP,function (req,res,next){
 		let id = req.params.id;
 		Articles.articles.searchById(id).exec(function(err,data){
+			data.content = marked(data.content); 
 			if( err ){
 				throw err;
 			}
@@ -130,7 +143,7 @@ module.exports = function(app){
 						return {
 							id :  article._id,
 							title: article.title,
-							content:trimHtml(article.content, {limit: 100}).html,  
+							content:trimHtml(marked(article.content), {limit: 100}).html,  
 							date:date.toLocaleDateString(),
 							comments:article.comments.length,
 							labels:article.labels,

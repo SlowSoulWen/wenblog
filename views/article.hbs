@@ -4,6 +4,8 @@
 {{#section 'head'}}
 	<link rel="stylesheet" href="/css/inc_style.css">
 	<link rel="stylesheet" href="/css/article.css">
+	<link rel="stylesheet" href="/css/chajian/markdown.css">
+	<link rel="stylesheet" href="/css/chajian/prism.css">
 {{/section}}
 <!-- 文章内容 -->
 <div id="main">
@@ -25,7 +27,7 @@
 	        {{/each}}
 			</h4>
 		</div>
-		<div class="article-content">
+		<div class="article-content markdown-body">
 			{{{articleData.content}}}
 		</div>
 	</article>
@@ -96,4 +98,5 @@
 {{#section 'js'}}
 	<script src="/js/iconfont.js"></script>
 	<script src="/js/article.js"></script>
+	<script src="/js/chajian/prism.js"></script>
 {{/section}}

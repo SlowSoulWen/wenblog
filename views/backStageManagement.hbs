@@ -4,6 +4,8 @@
 {{#section 'head'}}
 	<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/articlesEditor.css">
+	<link rel="stylesheet" href="/css/chajian/prism.css">
+	<link rel="stylesheet" href="/css/chajian/markdown.css">
 {{/section}}
 {{#if flash}}
 	<div class="alert alert-dismissable alert-{{flash-type}}" style="background-color:#F5F5D5">
@@ -34,9 +36,10 @@
 		<label for="exampleInputPassword1">标签:</label>
 		<input type="text" class="form-control label-data" name="labels" placeholder="标签之间用空格隔开">
 	</div>
-	<div id="summernote">
+	{{!--<div id="summernote">
 		<p>博客正文</p>
-	</div>
+	</div>--}}
+	<textarea id="test" style="width:100%;min-height:400px;"></textarea>
 	<button class="btn btn-primary read-atricle">预览</button>
 	<button class="btn btn-success add-article">确认提交</button>
 </div>
@@ -68,7 +71,8 @@
 	</article>	
 </script>
 {{#section 'js'}}
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 <script src="http://cdn.bootcss.com/juicer/0.6.14/juicer-min.js"></script>
+<script src="/js/chajian/marked.js"></script>
+<script src="/js/chajian/prism.js"></script>
 <script src="/js/articlesEditor.js"></script>
 {{/section}}

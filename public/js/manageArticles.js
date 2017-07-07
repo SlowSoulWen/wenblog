@@ -76,8 +76,10 @@ function getArticleMes(id){
 }
 //预览文章
 function showArticle(){
+	var data = articleData;
+	data.content = marked(data.content);
 	var tpl = document.getElementById('tpl').innerHTML;	
-	var html = juicer(tpl, articleData); 
+	var html = juicer(tpl, data); 
 	$('#article-context').html(html);
 	$("html,body").animate({scrollTop:$("#main").offset().top},1000);
 }
