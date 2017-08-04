@@ -190,11 +190,14 @@ a.label-primary {
 	overflow: hidden;
 }
 .article-content p {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	letter-spacing: 1px;
 }
 .article-content img{
 	width: 100%;
+}
+#main .markdown-body pre>code {
+	font-size: 1.1em;
 }
 span.label {
 	background-color: #ffffff;
@@ -236,7 +239,7 @@ h4 small {
 		display: none;
 	}
 	.article-content p {
-		font-size: 1.4em;
+		font-size: 1.3em;
 		letter-spacing: 0;
 	}
 }
@@ -271,7 +274,7 @@ h4 small {
 		display: none;
 	}
 	.article-content p {
-		font-size: 1.4em;
+		font-size: 1.2em;
 		letter-spacing: 0;
 	}
 }
