@@ -5,6 +5,7 @@ const trimHtml = require('trim-html');
 const async = require("async");
 const recordIP = require('../middlewares/recordIP').recordIP;
 const marked = require('marked');
+const mailSend = require('../lib/mail').mailSend
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -212,6 +213,25 @@ module.exports = function(app){
 					});
 					throw err;
 				}
+				// 如果此条评论是回复他人，判断是否需要发送邮件通知
+				if (Data.reply && Data.rid) {
+					let comments = data.comments
+					let replyComment = comments.find((comment) => {
+						return comment.id === Data.rid
+					})
+					if (replyComment.email) {
+						// 如果被回复人有留邮箱，发送邮件通知
+						Articles.articles.searchById(Data.article_id).exec(function(err,data){
+							let blogTitle = data.title
+							mailSend(replyComment.email, 'Slow_Soul的博客留言回复通知', `Hi!${replyComment.name}: <br/> 有人在我的博客《${blogTitle}》中回复了你的留言，快去看看吧！<a href="http://www.wenguangblog.cn/article/${Data.article_id}">点击查看博客</a> <br/> 你的留言内容：${replyComment.context} <br/> 回复内容：${Data.context}`)
+						})
+					}
+				}
+				// 通知自己，收到新留言
+				Articles.articles.searchById(Data.article_id).exec(function(err,data){
+					let blogTitle = data.title
+					mailSend('298172208@qq.com', '博客留言通知', `有人在我的博客《${blogTitle}》中留言了 <br/> 留言内容：${Data.context}`)
+				})
 				res.json({
 					result : 1  
 				});
