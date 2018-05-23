@@ -7,7 +7,7 @@ module.exports = {
           intro : "验证过期",
           message : "请先登录!"
         }      
-      return res.redirect(303,'www.wenguangblog.cn/manage/signin');
+      return res.redirect(303,'/manage/signin');
     }
     next();
   },
@@ -20,7 +20,7 @@ module.exports = {
           intro : "温馨提示",
           message : "您已经登陆过了!"
         }
-      return res.redirect(303,'www.wenguangblog.cn/manage');//返回之前的页面
+      return res.redirect(303,'/manage');//返回之前的页面
     }
     next();
   }
