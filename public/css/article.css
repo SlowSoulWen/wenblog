@@ -26,6 +26,12 @@ div.media .media-body{
 #addComment{
 	padding-bottom: 40px;
 }
+.reply-date {
+    float: right;
+    line-height: 14px;
+    margin-right: 10px;
+    color: #666;
+}
 /*媒体查询:手机类型*/
 @media only screen and ( max-width:768px){
 	body{

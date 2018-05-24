@@ -90,10 +90,14 @@ module.exports = function(app){
 	app.get('/article/:id',recordIP,function (req,res,next){
 		let id = req.params.id;
 		Articles.articles.searchById(id).exec(function(err,data){
-			data.content = marked(data.content); 
+			console.log('article', data)
 			if( err ){
 				throw err;
 			}
+			data.content = marked(data.content); 
+			data.comments.forEach((comment) => {
+				comment.cdate = (new Date(Number(comment.cdate))).toLocaleDateString()
+			})
 			data.date = (new Date(Number(data.date))).toLocaleDateString();
 			res.render('article',{
 				articleData : data,
@@ -223,7 +227,7 @@ module.exports = function(app){
 						// 如果被回复人有留邮箱，发送邮件通知
 						Articles.articles.searchById(Data.article_id).exec(function(err,data){
 							let blogTitle = data.title
-							mailSend(replyComment.email, 'Slow_Soul的博客留言回复通知', `Hi!${replyComment.name}: <br/> 有人在我的博客《${blogTitle}》中回复了你的留言，快去看看吧！<a href="http://www.wenguangblog.cn/article/${Data.article_id}">点击查看博客</a> <br/> 你的留言内容：${replyComment.context} <br/> 回复内容：${Data.context}`)
+							mailSend(replyComment.email, 'Slow_Soul的博客留言回复通知', `Hi!${replyComment.trueName ? replyComment.trueName : replyComment.name}: <br/> 有人在我的博客《${blogTitle}》中回复了你的留言，快去看看吧！<a href="http://www.wenguangblog.cn/article/${Data.article_id}">点击查看博客</a> <br/> 你的留言内容：${replyComment.context} <br/> 回复内容：${Data.context}`)
 						})
 					}
 				}
